@@ -10,8 +10,8 @@ const entradaDeDados = readline.createInterface({
 })
 
 
-entradaDeDados.question('Digite a operação desejada: \nadição \nsubtração \nmultiplicação \ndivisão\n', function(operador){
-    let escolhaUsuario = operador
+entradaDeDados.question('********************\nDigite a operação desejada: \nadição \nsubtração \nmultiplicação \ndivisão\n********************\n', function(operador){
+    let escolhaUsuario = operador.trim().toLowerCase()
 
     entradaDeDados.question('Digite um numero: ' , function(digito1){
         let numero1 = digito1.replace(/,/g,'.')
