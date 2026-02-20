@@ -14,17 +14,16 @@ entradaDeDados.question('Digite a operação desejada: \nadição \nsubtração 
     let escolhaUsuario = operador
 
     entradaDeDados.question('Digite um numero: ' , function(digito1){
-        let numero1 = digito1
+        let numero1 = digito1.replace(/,/g,'.')
 
         entradaDeDados.question('Digite outro numero: ' , function(digito2){
-            let numero2 = digito2
-
-            let resultado = operacao.operacaoMate(escolhaUsuario, numero1, numero2)
+            let numero2 = digito2.replace(/,/g,'.')
 
             let validacoes = validacao.validacaoLetras(escolhaUsuario, numero1, numero2)
 
+            if(validacoes){
+                let resultado = operacao.operacaoMate(escolhaUsuario, numero1, numero2)
 
-            if(resultado && validacoes){
                 console.log('Seu resultado é: ', Number(resultado.toFixed(2)))
             }else{
                 return false
